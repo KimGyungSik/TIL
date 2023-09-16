@@ -17,6 +17,5 @@ public class Ex11_8 {
         List list = new LinkedList(set); // LinkedList(Collection c), 1. set의 모든 요소를 List에 저장
         Collections.sort(list); // 2. list를 정렬
         System.out.println(list); // 3. list를 출력
-
     }
 }
