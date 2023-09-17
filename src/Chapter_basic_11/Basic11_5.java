@@ -10,13 +10,14 @@ public class Basic11_5 {
         for(int i=0; set.size()<25; i++) {
             set.add((int)(Math.random()*30)+1+"");
         }
+
         ArrayList list = new ArrayList(set);
         Collections.shuffle(list);
         Iterator it = list.iterator();
 
         for(int i=0; i< board.length; i++) {
             for(int j=0; j<board[i].length; j++) {
-                board[i][j] = Integer.parseInt((String) it.next()); // next메서드는 Object타입의 객체를 반환하기 떄문에 String으로 형변환
+                board[i][j] = Integer.valueOf((String) it.next()); // next메서드는 Object타입의 객체를 반환하기 떄문에 String으로 형변환
                 System.out.print((board[i][j]<10 ? " ": " ")+board[i][j]);
             }
             System.out.println();
