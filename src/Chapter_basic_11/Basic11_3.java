@@ -31,6 +31,7 @@ class BanNoAscending implements Comparator {
             Integer ban2 = s2.ban;
             Integer no2 = s2.no;
             return ban==ban2 ? no.compareTo(no2) : ban.compareTo(ban2);
+            // return s1.ban==s2.ban ? s1.no - s2.no : s1.ban - s2.ban;
         }
         return -1;
     }
