@@ -37,8 +37,12 @@ class SutdaCard {
     }
     public int hashCode() {
         return Objects.hash(num,isKwang);
+        // return toString().hashCode();
+        // String클래스의 hashCode()는 객체의 주소가 아닌 문자열의 내용을 기반으로 해시코드를 생성
+        // 인스턴스변수들의 값을 결합한 문자열을 만들고, 그 문자열에 대해 hashCode()를 호출하는 방법은 쉬우면서도 효과적
     }
     public String toString() {
         return num + (isKwang ? "K":"");
     }
+
 }

@@ -1,8 +1,6 @@
 package Chapter_basic_11;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Basic11_5 {
     public static void main(String[] args) {
@@ -12,7 +10,9 @@ public class Basic11_5 {
         for(int i=0; set.size()<25; i++) {
             set.add((int)(Math.random()*30)+1+"");
         }
-        Iterator it = set.iterator();
+        ArrayList list = new ArrayList(set);
+        Collections.shuffle(list);
+        Iterator it = list.iterator();
 
         for(int i=0; i< board.length; i++) {
             for(int j=0; j<board[i].length; j++) {
