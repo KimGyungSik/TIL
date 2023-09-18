@@ -4,7 +4,7 @@ import java.util.TreeSet;
 
 public class Ex11_13 {
     public static void main(String[] args) {
-        TreeSet set = new TreeSet();
+        TreeSet set = new TreeSet(); // 범위검색에 뛰어남
         // Set set = new TreeSet()으로는 headSet메서드나 tailSet메서드를 쓰지못함
         // Set인터페이스에는 저 메서드들이 존재하지않기떄문
         int[] score = {80,95,50,35,45,65,10,100};

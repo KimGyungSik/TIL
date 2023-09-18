@@ -19,7 +19,7 @@ public class Ex11_17 {
         shuffle(list); // 저장된 요소의 위치를 임의로 변경
         System.out.println(list);
 
-        sort(list, reverseOrder()); // 역순정렬 reverse(list);와 동일
+        sort(list, Collections.reverseOrder()); // 역순정렬 reverse(list);와 동일
         System.out.println(list);
 
         sort(list); // 정렬
