@@ -13,6 +13,8 @@ public class Ex11_16 {
 
       for(int i=0; i< data.length; i++) {// String배열의 길이만큼 반복
           if (map.containsKey(data[i])) {// key를 포함? 포함하면 기존의 value값+1 증가
+              //int value = (int)map.get(data[i]);
+              // map.put(data[i]. value+1);
               map.put(data[i], ((int)map.get(data[i]))+1);
           } else {
               map.put(data[i], 1);// 포함하지 않는다면 key-value(1)값으로 저장
