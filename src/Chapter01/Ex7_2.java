@@ -1,61 +1,67 @@
 package Chapter01;
+//실행결과 : [p1=(100,100), p2=(140,50), p3=(200,100),color=black]
+//          [center=(150, 150), r=50, color=black]
 
 public class Ex7_2 {
     public static void main(String[] args) {
-        Point[] p = { new Point(100,100), // Point타입의 객체배열 선언과 생성
-                        new Point(140,50),
-                        new Point(200, 100)
+        Point1[] p = { new Point1(100,100), // Point타입의 객체배열 선언과 생성
+                new Point1(140,50),
+                new Point1(200, 100)
         };
 
         Triangle t = new Triangle(p);
-        Circle c = new Circle(new Point(150,150), 50);
+        Circle c = new Circle(new Point1(150,150), 50);
 
         t.draw();
         c.draw();
     }
 }
-class Shape {       // Shape클래스 생성
-    String color = "black"; // 멤버변수 color는 black
-    void draw() {           // draw메서드 생성
-        System.out.printf("[color=%s]%n",color);
+
+class Shape {
+    String color = "black";
+    void draw() {
+        System.out.printf("color :"+color);
     }
 }
-class Point {  //Point 클래스 생성
-    int x;      // 멤버변수 x,y 생성
+class Point{
+    int x;
     int y;
-    Point(int x,int y) { // 매개변수가 있는 생성자 x,y값 받으면 인스턴스변수 초기화
+    Point(int x,int y) {
         this.x = x;
         this.y = y;
     }
-    Point() {    // 기본생성자 매개변수가 있는 생성자 호출
-        this(0,0);
+    public String toString() {
+        return x+","+y;
     }
-    String getXY() { // getXY메서드 생성 인스턴스변수 반환
-        return "("+x+","+y+")";
-    }
-}
-class Circle extends Shape { // Shape를 상속한 Circle클래스 생성
-    Point center; // Point타입의 참조형변수 선언
-    int r; // 멤버변수 r 선언
 
-    Circle() { // 기본생성자
-        this(new Point(0,0),100); // 매개변수가 있는 생성자 호출
-    }
-    Circle(Point center, int r) { // 매개변수로 Point타입의 참조형변수, int형 변수 선언
-        this.center = center;
+}
+
+class Circle extends Shape {
+    Point1 p;
+    int r;
+    Circle(Point1 p, int r) {
+        this.p = p;
         this.r = r;
     }
-    void draw() { // draw메서드 오버라이딩
-        System.out.printf("[center=(%d, %d), r=%d, color=%s]%n",center.x,center.y,r,color);
+    Circle() {
+        this(new Point1(0,0),100);
+    }
+    void draw() {
+        System.out.printf("[center(%d, %d), r = %d,color=%s]%n",p.x,p.y,r,color);
     }
 }
-class Triangle extends Shape { //Shape클래스를 상속한 Triangle클래스 생성
-    Point[] p = new Point[3]; // Point타입의 객체배열 선언
+class Triangle extends Shape {
+    Point1[] p = new Point1[3];
 
-    Triangle(Point[] p) { // 매개변수로 Point타입의 객체배열을 받는 생성자 생성
+    Triangle(Point1[] p) {
         this.p = p;
     }
-    void draw() { // draw메서드 오버라이딩
-        System.out.printf("[p1=%s, p2=%s, p3=%s,color=%s]%n",p[0].getXY(), p[1].getXY(),p[2].getXY(),color);
+    Triangle() {
+    }
+
+    @Override
+    void draw() {
+        System.out.printf("[p1 = (%s), p2=(%s), p3 = (%s), color=%s]%n",p[0],p[1],p[2],color);
+                //[p1=(100,100), p2=(140,50), p3=(200,100),color=black]
     }
 }

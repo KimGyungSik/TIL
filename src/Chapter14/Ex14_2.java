@@ -13,6 +13,7 @@ public class Ex14_2 {
         Consumer<Integer> c =i->System.out.print(i+", ");
         Predicate<Integer> p = i -> i%2==0; // 짝수인지 검사
         Function<Integer, Integer> f = i -> i/10*10; // i의 일의 자리를 없앤다.
+        // Integer = 입력 Integer = 출력
 
         List<Integer> list = new ArrayList<>();
         makeRandomList(s,list); // list를 랜덤값으로 채운다.

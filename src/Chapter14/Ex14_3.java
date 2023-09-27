@@ -18,15 +18,6 @@ public class Ex14_3 {
         System.out.println(f2.apply("AAA")); // AAA가 그대로 출력됨
 
         Predicate<Integer> p = i -> i <100;
-        Predicate<Integer> q = i -> i <200;
-        Predicate<Integer> r = i -> i%2 == 0;
-        Predicate<Integer> notP = p.negate(); // i >= 100
-
-        Predicate<Integer> all = notP.and(q.or(r));// i>=100 && (i<200 || i%2==0 )
-        System.out.println(all.test(150));
-
-        //String str1 = "abc";
-        //String str2 = "abc";
         String str1 = new String("abc");
         String str2 = new String("abc");
         // str1과 str2가 같은지 비교한 결과를 반환
