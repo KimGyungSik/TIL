@@ -13,10 +13,10 @@ public class Ex11_11 {
 //        for(int i=0; set.size()<6; i++) {
 //            int num = (int)(Math.random()*45)+1;
 //            //set.add(num); // set.add(new Integer(num)); Integer클래스는 compareTo메서드를 가지고있음
-              set.add(new Test());
-              set.add(new Test());
-              set.add(new Test());
-              set.add(new Test());
+              set.add(new Test3());
+              set.add(new Test3());
+              set.add(new Test3());
+              set.add(new Test3());
 //        }
         System.out.println(set);
     }
